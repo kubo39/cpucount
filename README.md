@@ -61,8 +61,8 @@ $ taskset -c 0,1 go run golang/cpucount.go
 $ dmd --version
 DMD64 D Compiler v2.074.0
 Copyright (c) 1999-2017 by Digital Mars written by Walter Bright
-$ rdmd cpucount.d
-std.parallelism.tatalCPUs = 4
-$ taskset -c 0,1 rdmd cpucount.d
-std.parallelism.tatalCPUs = 4
+$ rdmd dlang/cpucount.d
+4
+$ taskset -c 0,1 rdmd dlang/cpucount.d
+4
 ```

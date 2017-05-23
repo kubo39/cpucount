@@ -1,7 +1,8 @@
-import std.parallelism;
+// https://dlang.org/phobos/std_parallelism.html#.totalCPUs
+import std.parallelism : totalCPUs;
 import std.stdio;
 
 void main()
 {
-    writefln("std.parallelism.tatalCPUs = %d", totalCPUs);
+    writeln(totalCPUs);
 }
