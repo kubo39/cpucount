@@ -11,6 +11,8 @@ $ cat /proc/cpuinfo| grep ^processor| wc -l
 
 ### nproc(1)
 
+- http://man7.org/linux/man-pages/man1/nproc.1.html
+
 ```console
 $ nproc --version| head -1
 nproc (GNU coreutils) 8.25
@@ -21,6 +23,12 @@ $ taskset -c 0,1 nproc
 ```
 
 ### Python
+
+- https://docs.python.org/3.6/library/os.html#os.cpu_count
+
+    Return the number of CPUs in the system. Returns None if undetermined.
+    This number is not equivalent to the number of CPUs the current process can use.
+    The number of usable CPUs can be obtained with len(os.sched_getaffinity(0))
 
 ```console
 $ python --version
@@ -35,6 +43,16 @@ $ taskset -c 0,1 python python/cpucount.py
 
 ### Ruby
 
+https://ruby-doc.org/stdlib-2.2.0/libdoc/etc/rdoc/Etc.html#method-c-nprocessors
+
+    Returns the number of online processors.
+    The result is intended as the number of processes to use all available processors.
+    This method is implemented using:
+     - sched_getaffinity(): Linux
+     - sysconf(_SC_NPROCESSORS_ONLN): GNU/Linux, NetBSD, FreeBSD, OpenBSD, DragonFly BSD, OpenIndiana, Mac OS X, AIX
+     The result might be smaller number than physical cpus especially when ruby process is bound to specific cpus.
+     This is intended for getting better parallel processing.
+
 ```console
 $ ruby --version
 ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
@@ -45,6 +63,12 @@ $ taskset -c 0,1 ruby ruby/cpucount.rb
 ```
 
 ### Go
+
+- https://golang.org/pkg/runtime/#NumCPU
+
+    NumCPU returns the number of logical CPUs usable by the current process.
+    The set of available CPUs is checked by querying the operating system at process startup.
+    Changes to operating system CPU allocation after process startup are not reflected.
 
 ```console
 $ go version
@@ -57,6 +81,10 @@ $ taskset -c 0,1 go run golang/cpucount.go
 
 ### D
 
+- https://dlang.org/phobos/std_parallelism.html#.totalCPUs
+
+    The total number of CPU cores available on the current machine, as reported by the operating system.
+
 ```console
 $ dmd --version
 DMD64 D Compiler v2.074.0
@@ -68,6 +96,11 @@ $ taskset -c 0,1 rdmd dlang/cpucount.d
 ```
 
 ### Nim
+
+- https://nim-lang.org/docs/osproc.html#countProcessors
+
+    returns the numer of the processors/cores the machine has.
+    Returns 0 if it cannot be detected.
 
 ```console
 $ nim --help| head -1
