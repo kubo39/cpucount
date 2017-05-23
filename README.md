@@ -27,8 +27,10 @@ $ python --version
 Python 3.6.1
 $ python python/cpucount.py
 4
+4
 $ taskset -c 0,1 python python/cpucount.py
 4
+2
 ```
 
 ### Ruby (parallel gem)
