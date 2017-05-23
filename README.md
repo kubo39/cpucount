@@ -33,7 +33,7 @@ $ taskset -c 0,1 python python/cpucount.py
 2
 ```
 
-### Ruby (parallel gem)
+### Ruby
 
 ```console
 $ ruby --version
@@ -41,7 +41,7 @@ ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
 $ ruby ruby/cpucount.rb
 4
 $ taskset -c 0,1 ruby ruby/cpucount.rb
-4
+2
 ```
 
 ### Go

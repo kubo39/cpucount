@@ -1,3 +1,3 @@
-require 'parallel'
+require 'etc'
 
-puts Parallel.processor_count
+puts Etc.nprocessors
