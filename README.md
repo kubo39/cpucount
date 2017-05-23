@@ -66,3 +66,16 @@ $ rdmd dlang/cpucount.d
 $ taskset -c 0,1 rdmd dlang/cpucount.d
 4
 ```
+
+### Nim
+
+```console
+$ nim --help| head -1
+Nim Compiler Version 0.17.0 (2017-05-17) [Linux: amd64]
+$ nim c -r nim/cpucount.nim
+...
+4
+$ taskset -c 0,1 nim c -r nim/cpucount.nim
+...
+4
+```
