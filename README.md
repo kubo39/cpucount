@@ -22,6 +22,22 @@ $ taskset -c 0,1 nproc
 2
 ```
 
+### C++14
+
+- http://en.cppreference.com/w/cpp/thread/thread/hardware_concurrency
+
+    number of concurrent threads supported. If the value is not well defined or not computable, returns 0.
+
+```console
+$ g++ --version | head -1
+g++ (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
+$ g++ -std=c++14 cpp/cpucount.cpp
+$ ./a.out
+4
+$ taskset -c 0,1 ./a.out
+4
+```
+
 ### Python
 
 - https://docs.python.org/3.6/library/os.html#os.cpu_count
