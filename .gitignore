@@ -1,2 +1,3 @@
 nim/nimcache/
 nim/cpucount
+rust/cpucount/target/

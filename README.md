@@ -95,6 +95,21 @@ $ taskset -c 0,1 go run golang/cpucount.go
 2
 ```
 
+### Rust
+
+- https://github.com/seanmonstar/num_cpus
+
+    Count the number of CPUs on the current machine.
+
+```console
+$ rustc --version
+rustc 1.19.0-nightly (5b13bff52 2017-05-23)
+$ cargo run -q
+4
+$ taskset -c 0,1 cargo run -q
+4
+```
+
 ### D
 
 - https://dlang.org/phobos/std_parallelism.html#.totalCPUs
