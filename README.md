@@ -40,6 +40,7 @@ $ taskset -c 0,1 ./a.out
 
 ### Python
 
+- https://bugs.python.org/issue23530
 - https://docs.python.org/3.6/library/os.html#os.cpu_count
 
     Return the number of CPUs in the system. Returns None if undetermined.
@@ -59,7 +60,8 @@ $ taskset -c 0,1 python python/cpucount.py
 
 ### Ruby
 
-https://ruby-doc.org/stdlib-2.2.0/libdoc/etc/rdoc/Etc.html#method-c-nprocessors
+- http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/65347
+- https://ruby-doc.org/stdlib-2.2.0/libdoc/etc/rdoc/Etc.html#method-c-nprocessors
 
     Returns the number of online processors.
     The result is intended as the number of processes to use all available processors.
@@ -102,12 +104,12 @@ $ taskset -c 0,1 go run golang/cpucount.go
     Count the number of CPUs on the current machine.
 
 ```console
-$ rustc --version
+$ rustc --version  # num_cpus = 1.5.0
 rustc 1.19.0-nightly (5b13bff52 2017-05-23)
 $ cargo run -q
 4
 $ taskset -c 0,1 cargo run -q
-4
+2
 ```
 
 ### D

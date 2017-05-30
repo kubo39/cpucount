@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["Hiroki Noda <kubo39@gmail.com>"]
 
 [dependencies]
-num_cpus = "1.4.0"
+num_cpus = "1.5.0"
